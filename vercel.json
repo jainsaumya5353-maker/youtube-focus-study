@@ -1,0 +1,26 @@
+{
+    "buildCommand": "cd focus-study-player && npm install && npm run build",
+    "outputDirectory": "focus-study-player/dist",
+    "framework": null,
+    "rewrites": [
+        {
+            "source": "/extension/(.*)",
+            "destination": "/extension/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/extension/(.*)",
+            "headers": [
+                {
+                    "key": "Content-Disposition",
+                    "value": "attachment"
+                }
+            ]
+        }
+    ]
+}
