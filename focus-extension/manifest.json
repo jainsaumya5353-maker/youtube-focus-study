@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Focus Study Player",
+    "version": "1.0",
+    "description": "Forces single-video focus mode on YouTube.",
+    "permissions": [
+        "storage",
+        "tabs",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "*://*.youtube.com/*",
+        "*://localhost/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://localhost/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
