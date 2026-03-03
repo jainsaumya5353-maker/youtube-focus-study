@@ -1,6 +1,15 @@
-document.getElementById('return-btn').addEventListener('click', () => {
-    // Let the background script or default behavior handle it, or just close the tab if opened in new tab.
-    // Actually, if they navigate to a blocked page, they might want to go back to the react app.
-    // If the React app is at localhost:5173, we can redirect there.
-    window.location.href = 'http://localhost:5173/';
+const FOCUS_PLAYER_URL = 'https://youtube-focus-study-private.vercel.app';
+
+document.getElementById('return-btn').addEventListener('click', async () => {
+    // Try to find an existing Focus Player tab and switch to it
+    const tabs = await chrome.tabs.query({ url: FOCUS_PLAYER_URL + '/*' });
+
+    if (tabs.length > 0) {
+        // Focus the existing tab
+        await chrome.tabs.update(tabs[0].id, { active: true });
+        await chrome.windows.update(tabs[0].windowId, { focused: true });
+    } else {
+        // Open a new tab with the Focus Player
+        await chrome.tabs.create({ url: FOCUS_PLAYER_URL });
+    }
 });

@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Focus Mode Active</title>
+  <title>Focus Mode Active — YouTube Focus Study Player</title>
   <link rel="stylesheet" href="blocked.css">
 </head>
+
 <body>
   <div class="container">
+    <div class="pulse-ring"></div>
     <div class="icon-wrapper">
-      <svg xmlns="http://www.w3.org/-2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
     </div>
-    <h1>Focus Mode Active</h1>
-    <p>You are currently in a study session.</p>
-    <p>Return to your Focus Study Player to continue your work.</p>
-    <button id="return-btn">Return to Study Player</button>
+    <h1>🎯 Focus Mode Active</h1>
+    <p class="subtitle">You're in a study session right now. Stay on track!</p>
+    <p class="detail">This page was blocked because it's not part of your current focus session. Return to your Study
+      Player to continue studying.</p>
+    <button id="return-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+      Go Back to Focus Player
+    </button>
   </div>
-  <script src="blocked.js"></script>
 </body>
+<script src="blocked.js"></script>
+
 </html>
